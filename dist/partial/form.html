@@ -1,0 +1,34 @@
+<form name="form" class="form">
+    <fieldset>
+        <div class="form-table">
+            <div class="form-row">
+                <label for="title">Title:</label>
+                <div class="form-cell">
+                    <input type="text" id="title" name="title" data-ng-model="notification.title" required />
+                    <p class="error-message" ng-show="form.title.$touched && form.title.$invalid">The title is required.</p>
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="body">Title:</label>
+                <div class="form-cell">
+                    <textarea id="body" name="body" data-ng-model="notification.body" required></textarea>
+                    <p class="error-message" ng-show="form.body.$touched && form.body.$invalid">The body is required.</p>
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="category">Category:</label>
+                <div class="form-cell">
+                    <select id="category" name="category" data-ng-model="notification.category" required>
+                        <option>info</option>
+                        <option>warning</option>
+                        <option>error</option>
+                    </select>
+                    <p class="error-message" ng-show="form.category.$touched && form.category.$invalid">The category is required.</p>
+                </div>
+            </div>
+        </div>
+        <div class="btn-holder">
+            <a href="#" class="btn" data-ng-click="invokeNotification($event)">Invoke notification!</a>
+        </div>
+    </fieldset>
+</form>
